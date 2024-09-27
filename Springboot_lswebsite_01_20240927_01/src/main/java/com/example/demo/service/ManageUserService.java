@@ -62,7 +62,6 @@ public class ManageUserService {
 	        if (user != null && passwordEncoder.matches(password,user.getPassword())) {
 	            return true;
 	        }
-	        System.out.println("test");
 		return false;
 	}
 

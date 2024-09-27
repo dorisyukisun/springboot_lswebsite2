@@ -3,10 +3,11 @@ package com.example.demo.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.demo.loginform.LoginForm;
+import com.example.demo.dto.LoginForm;
+
+
 
 @Controller
 @RequestMapping
@@ -18,7 +19,7 @@ public class LoginController {
 	public String login(Model model) {
 		LoginForm loginForm = new LoginForm();
 		System.out.println("loginFrom :"+ loginForm);
-		model.addAttribute("loginForm",loginForm); //Add form-backing object
+		model.addAttribute("loginForm", loginForm); //Add form-backing object
 		System.out.println("Loginform added to model: " + loginForm);
 		
 //		return "../templates/admin/login";
@@ -26,11 +27,5 @@ public class LoginController {
 		// 返回 login.html 模板頁面
 	}
 	
-	@PostMapping("/fail")
-	public String fail(Model model) {
-		LoginForm loginForm = new LoginForm();
-		model.addAttribute("loginForm",loginForm); //Add form-backing object
-		return "admin/fail";
-	}
-	
+
 }

@@ -33,12 +33,11 @@ public class ManageUserController {
     //處理從 login.html 提交的表單，接收用戶名和密碼，並調用 AuthService 來進行驗證。
     @PostMapping("/login") 
         public String login(@RequestParam String username, @RequestParam String password, Model model) {
-            System.out.printf("username: %s password: %s\n", username, password);
-    		if (manageUserService.authenticate(username, password)) {
+            if (manageUserService.authenticate(username, password)) {
                 return "redirect:admin/manager-users";
             } else {
                 model.addAttribute("error", "Invalid username or password");
-                return "/admin/manage-users/login";
+                return "login";
             }
         }
 

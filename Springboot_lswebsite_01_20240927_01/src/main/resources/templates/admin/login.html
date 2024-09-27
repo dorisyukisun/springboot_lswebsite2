@@ -28,15 +28,11 @@
 	        </header>
 	        
 	        <!-- 表單提交目標路徑 -->
-	       <!-- <form th:action="@{/lswebsite/admin/manage-users/login}" th:object="${loginForm}" method="post" class="templatemo-login-form"> -->
-	        		
-	        <form th:action="@{/lswebsite/admin/manage-users/login}"
-	        th:object=${loginForm} method="post" class="templatemo-login-form">
+	        
+	        <form th:action="@{/lswebsite/admin/manage-users/login}" th:object=${loginForm} method="post" class="templatemo-login-form">
 	        	<div class="form-group">
 	        		<div class="input-group">
-		        		<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	  
-		        		
-		        		 <script>alert('test')</script>      		
+		        		<div class="input-group-addon"><i class="fa fa-user fa-fw"></i></div>	        		
 		              	<input type="text" th:field="*{username}" class="form-control" placeholder="12345678" required>           
 		          	</div>	
 	        	</div>
